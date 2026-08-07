@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seaborn | Python Libraries Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body id="seaborn-page">
+    <div id="particles-js"></div>
+    
+    <nav class="navbar glass">
+        <div class="logo">Python<span class="gradient-text">Libraries</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="numpy.html">NumPy</a></li>
+            <li><a href="pandas.html">Pandas</a></li>
+            <li><a href="seaborn.html" class="seaborn-theme">Seaborn</a></li>
+        </ul>
+        <button id="download-btn" class="btn btn-glow">Download PDF</button>
+    </nav>
+
+    <div id="content-to-pdf" class="content-wrapper">
+        <main>
+            <section id="seaborn" class="library-section">
+                <h2 class="section-title seaborn-theme">Seaborn: The Beautiful Painter</h2>
+                
+                <div class="card glass">
+                    <h3>What is it?</h3>
+                    <p>Seaborn takes your boring data and automatically turns it into stunning, colorful graphs. It does all the hard work of picking good colors and styles so your charts look professional instantly.</p>
+                </div>
+                
+                <div class="card glass">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3 style="margin: 0;">How to use it</h3>
+                        <button class="btn btn-glow" onclick="toggleExplanation('seaborn')">🔍 Explain in Plain English</button>
+                    </div>
+                    <div id="seaborn-code">
+                        <pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Let's draw a scatter plot from some data!
+sns.scatterplot(x="Age", y="Salary", data=my_data)
+plt.show()</code></pre>
+                    </div>
+                    <div id="seaborn-explanation" style="display: none; background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--seaborn-color);">
+                        <p><strong>Line 1 & 2:</strong> We load Seaborn (the painter) and Matplotlib (the canvas).</p>
+                        <p><strong>Line 5:</strong> We tell Seaborn to draw dots (scatter plot). The dots represent Age (left to right) and Salary (up and down).</p>
+                        <p><strong>Line 6:</strong> We tell the canvas to show our beautiful painting to the screen.</p>
+                    </div>
+                </div>
+
+                <div class="card glass">
+                    <h3>Real-World Magic</h3>
+                    <p><strong>Discovering Trends:</strong> By plotting customer ages against what they buy, a business can visually see patterns (like younger people buying more tech) and target their ads perfectly.</p>
+                </div>
+
+                <div class="card glass">
+                    <h3>See it in Action (Customer Clusters)</h3>
+                    <canvas id="seabornChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Seaborn Quiz -->
+                <div class="card glass quiz-container" id="quiz-seaborn">
+                    <h3>Seaborn Quick Quiz 🧠</h3>
+                    <p>What is Seaborn mainly used for?</p>
+                    <ul class="options-list">
+                        <li><button class="quiz-btn seaborn-btn" onclick="checkAnswer('seaborn', false, this)">A. Storing passwords</button></li>
+                        <li><button class="quiz-btn seaborn-btn" onclick="checkAnswer('seaborn', false, this)">B. Downloading files</button></li>
+                        <li><button class="quiz-btn seaborn-btn" onclick="checkAnswer('seaborn', true, this)">C. Drawing beautiful data graphs</button></li>
+                    </ul>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="glass">
+        <p>Built with Ultra Features! 🚀</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

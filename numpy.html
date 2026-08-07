@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NumPy | Python Libraries Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body id="numpy-page">
+    <div id="particles-js"></div>
+    
+    <nav class="navbar glass">
+        <div class="logo">Python<span class="gradient-text">Libraries</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="numpy.html" class="numpy-theme">NumPy</a></li>
+            <li><a href="pandas.html">Pandas</a></li>
+            <li><a href="seaborn.html">Seaborn</a></li>
+        </ul>
+        <button id="download-btn" class="btn btn-glow">Download PDF</button>
+    </nav>
+
+    <div id="content-to-pdf" class="content-wrapper">
+        <main>
+            <section id="numpy" class="library-section">
+                <h2 class="section-title numpy-theme">NumPy: The Python Calculator</h2>
+                
+                <div class="card glass">
+                    <h3>What is it?</h3>
+                    <p>Think of NumPy as a super-fast calculator or Excel spreadsheet for Python. It stores numbers in grids (called arrays) and lets you do math on thousands of numbers instantly without writing slow loops.</p>
+                </div>
+                
+                <div class="card glass">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3 style="margin: 0;">How to use it</h3>
+                        <button class="btn btn-glow" onclick="toggleExplanation('numpy')">🔍 Explain in Plain English</button>
+                    </div>
+                    <div id="numpy-code">
+                        <pre><code>import numpy as np
+
+# Let's make a simple list of numbers and double them!
+numbers = np.array([1, 2, 3, 4, 5])
+print(numbers * 2) 
+
+# Output: [2 4 6 8 10]</code></pre>
+                    </div>
+                    <div id="numpy-explanation" style="display: none; background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--numpy-color);">
+                        <p><strong>Line 1:</strong> We tell Python to load the NumPy calculator and nickname it <code>np</code>.</p>
+                        <p><strong>Line 4:</strong> We create a grid (array) of numbers from 1 to 5.</p>
+                        <p><strong>Line 5:</strong> We instantly multiply every number inside the grid by 2. No slow loops needed!</p>
+                    </div>
+                </div>
+
+                <div class="card glass">
+                    <h3>Real-World Magic</h3>
+                    <p><strong>Photo Filters:</strong> When you apply a filter to a photo on Instagram, you are using math on millions of pixels. NumPy can change the brightness of an entire photo in a fraction of a second!</p>
+                </div>
+
+                <div class="card glass">
+                    <h3>See it in Action (Sine Wave)</h3>
+                    <canvas id="numpyChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- NumPy Quiz -->
+                <div class="card glass quiz-container" id="quiz-numpy">
+                    <h3>NumPy Quick Quiz 🧠</h3>
+                    <p>What is NumPy best described as?</p>
+                    <ul class="options-list">
+                        <li><button class="quiz-btn numpy-btn" onclick="checkAnswer('numpy', false, this)">A. A web browser</button></li>
+                        <li><button class="quiz-btn numpy-btn" onclick="checkAnswer('numpy', true, this)">B. A super-fast calculator/grid for Python</button></li>
+                        <li><button class="quiz-btn numpy-btn" onclick="checkAnswer('numpy', false, this)">C. A database manager</button></li>
+                    </ul>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="glass">
+        <p>Built with Ultra Features! 🚀</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

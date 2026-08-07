@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas | Python Libraries Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body id="pandas-page">
+    <div id="particles-js"></div>
+    
+    <nav class="navbar glass">
+        <div class="logo">Python<span class="gradient-text">Libraries</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="numpy.html">NumPy</a></li>
+            <li><a href="pandas.html" class="pandas-theme">Pandas</a></li>
+            <li><a href="seaborn.html">Seaborn</a></li>
+        </ul>
+        <button id="download-btn" class="btn btn-glow">Download PDF</button>
+    </nav>
+
+    <div id="content-to-pdf" class="content-wrapper">
+        <main>
+            <section id="pandas" class="library-section">
+                <h2 class="section-title pandas-theme">Pandas: The Data Manager</h2>
+                
+                <div class="card glass">
+                    <h3>What is it?</h3>
+                    <p>Pandas is like SQL and Excel combined, but inside Python. It creates a magical table called a "DataFrame." You can easily search, filter, and organize massive amounts of data with just one line of code.</p>
+                </div>
+                
+                <div class="card glass">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                        <h3 style="margin: 0;">How to use it</h3>
+                        <button class="btn btn-glow" onclick="toggleExplanation('pandas')">🔍 Explain in Plain English</button>
+                    </div>
+                    <div id="pandas-code">
+                        <pre><code>import pandas as pd
+
+# Creating a table of friends
+data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
+df = pd.DataFrame(data)
+
+print(df)</code></pre>
+                    </div>
+                    <div id="pandas-explanation" style="display: none; background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 5px; border-left: 4px solid var(--pandas-color);">
+                        <p><strong>Line 1:</strong> We load the Pandas data manager and nickname it <code>pd</code>.</p>
+                        <p><strong>Line 4:</strong> We create a simple dictionary (list) of our friends' names and ages.</p>
+                        <p><strong>Line 5:</strong> We magically convert that simple list into a beautiful, organized table called a <code>DataFrame</code>.</p>
+                    </div>
+                </div>
+
+                <div class="card glass">
+                    <h3>Real-World Magic</h3>
+                    <p><strong>Stock Market:</strong> Analysts use Pandas to load 10 years of stock prices, find the highest price of the year, and calculate average trends effortlessly.</p>
+                </div>
+
+                <div class="card glass">
+                    <h3>See it in Action (Quarterly Revenue)</h3>
+                    <canvas id="pandasChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Pandas Quiz -->
+                <div class="card glass quiz-container" id="quiz-pandas">
+                    <h3>Pandas Quick Quiz 🧠</h3>
+                    <p>What is the magical table in Pandas called?</p>
+                    <ul class="options-list">
+                        <li><button class="quiz-btn pandas-btn" onclick="checkAnswer('pandas', true, this)">A. DataFrame</button></li>
+                        <li><button class="quiz-btn pandas-btn" onclick="checkAnswer('pandas', false, this)">B. DataTable</button></li>
+                        <li><button class="quiz-btn pandas-btn" onclick="checkAnswer('pandas', false, this)">C. SuperGrid</button></li>
+                    </ul>
+                    <div class="feedback"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="glass">
+        <p>Built with Ultra Features! 🚀</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
